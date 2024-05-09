@@ -1,0 +1,30 @@
+
+body {
+    margin: 0;
+}
+
+canvas 
+{ display: block; 
+}
+
+.container {
+    display:flex;
+    background-color: rgb(219,255,255);
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    min-width: 100%;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size:8pt;
+
+}
+
+.canvas-container {
+    background-image: url('../Ocean.jpeg');
+}
+
+.row {
+    width: 100%;
+}

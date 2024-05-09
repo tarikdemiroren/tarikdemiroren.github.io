@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gubi Paint</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/add9192f0f.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <div id="toolbox">
+        <div id="inner-container">
+            <button class="tool-button active " data-tooltip="Draw" id="drawButton"><i class="fa-solid fa-pen fa-xl"
+                    style="color: #40e0d0;"></i></button>
+            <button class="tool-button color" data-tooltip="Blue" id="button1"><i class="fa-solid fa-square fa-xl"
+                    style="color: #40e0d0;"></i></button>
+            <button class="tool-button color" data-tooltip="White" id="button2"><i class="fa-solid fa-square fa-xl"
+                    style="color: #e6e6fa;"></i></button>
+            <button class="tool-button color" data-tooltip="Orange" id="button3"><i class="fa-solid fa-square fa-xl"
+                    style="color: #ff8243;"></i></button>
+            <button class="tool-button color" data-tooltip="Purple" id="button4"><i class="fa-solid fa-square fa-xl"
+                    style="color: #4b0082;"></i></button>
+            <button class="tool-button color" data-tooltip="Yellow" id="button5"><i class="fa-solid fa-square fa-xl"
+                    style="color: #fffacd;"></i></button>
+            <button class="tool-button color" data-tooltip="Red" id="button6"><i class="fa-solid fa-square fa-xl"
+                    style="color: #dc143c;"></i></button>
+            <button class="tool-button color" data-tooltip="Lilac" id="button7"><i class="fa-solid fa-square fa-xl"
+                    style="color: #ccccff;"></i></button>
+            <button class="tool-button color" data-tooltip="Green" id="button8"><i class="fa-solid fa-square fa-xl"
+                    style="color: #2ecc71;"></i></button>
+            <button class="tool-button color" data-tooltip="Sunset" id="button9"><i class="fa-solid fa-square fa-xl"
+                    style="color: #f4c430;"></i></button>
+            <div class="tool-button color" data-tooltip="Picker" id="colorPicker">
+                <input type="color" class="color-picker" id="colorPickerInput">
+
+            </div>
+
+            <button class="tool-button" data-tooltip="Eraser" id="button11"><i class="fa-solid fa-eraser fa-xl"
+                    style="color: #ebebeb;"></i></button>
+            <button class="tool-button" data-tooltip="Clear" id="button12"><i class="fa-solid fa-trash fa-xl"
+                    style="color: #ebebeb;"></i></button>
+            <button class="tool-button" data-tooltip="Undo" id="undoButton"><i class="fa-solid fa-rotate-left fa-xl"
+                    style="color: #ebebeb;"></i></button>
+            <button class="tool-button" data-tooltip="Redo" id="redoButton"><i class="fa-solid fa-rotate-right fa-xl"
+                    style="color: #ebebeb;"></i></button>
+            <button class="tool-button" data-tooltip="Select" id="selectButton"><i
+                    class="fa-solid fa-object-ungroup fa-xl" style="color: #ebebeb;"></i></button>
+            <button class="tool-button" data-tooltip="Copy" id="copyPasteButton"><i class="fa-solid fa-copy fa-xl"
+                    style="color: #ebebeb;"></i></button>
+            <button class="tool-button " data-tooltip="Zoom In" id="zoomInButton"><i
+                    class="fa-solid fa-magnifying-glass-plus fa-xl" style="color: #ebebeb;"></i></button>
+            <button class="tool-button " data-tooltip="Zoom Out" id="zoomOutButton"><i
+                    class="fa-solid fa-magnifying-glass-minus fa-xl" style="color: #ebebeb;"></i></button>
+            <button class="tool-button" data-tooltip="Move" id="moveButton"><i
+                    class="fa-solid fa-up-down-left-right fa-xl" style="color: #ebebeb;"></i></button>
+            <button class="tool-button" data-tooltip="Save" id="downloadButton"><i class="fa-solid fa-download fa-xl"
+                    style="color: #ebebeb;"></i></button>
+            <input type="file" id="loadInput" style="display: none;">
+            <button class="tool-button" data-tooltip="Load" id="loadButton"><i class="fa-solid fa-file-import fa-xl"
+                    style="color: #ebebeb;"></i></button>
+            <button class="tool-button" data-tooltip="Export as PNG" id="exportButton"><i class="fa-solid fa-file-image fa-xl"
+                    style="color: #ebebeb;"></i></button>
+            <hr>
+            <p class="header">Layers:</p>
+            <div id="layerToolbox" ondragover="allowDrop(event)" ondrop="drop(event)">
+                <button class="tool-button toggleable active layer" data-tooltip="Layer 1" id="layer1Button"
+                    draggable="true" ondragstart="drag(event)" data-layer="1">1</button>
+                <button class="tool-button toggleable layer" data-tooltip="Layer 2" id="layer2Button" draggable="true"
+                    ondragstart="drag(event)" data-layer="2">2</button>
+                <button class="tool-button toggleable layer" data-tooltip="Layer 3" id="layer3Button" draggable="true"
+                    ondragstart="drag(event)" data-layer="3">3</button>
+            </div>
+            <hr>
+            <button class="tool-button" data-tooltip="All Layers" id="allLayersButton">All</button>
+            <!-- Add more buttons with different icons and tooltips -->
+        </div>
+    </div>
+    <div id="canvas">
+        <canvas id="glCanvas"></canvas>
+    </div>
+    <div id="madebypic">
+        <img src="MadeBy.png" alt="Description of the image" width="300" height="240">
+    </div>
+
+
+
+    <script type="text/javascript" src="paint.js"></script>
+
+</body>
+
+</html>

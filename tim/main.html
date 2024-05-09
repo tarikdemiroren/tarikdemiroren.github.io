@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="Common/webgl-utils.js"></script>
+    <script type="text/javascript" src="Common/MV.js"></script>
+    <script type="text/javascript" src="timothy.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container text-center no-gutters">
+
+        <div class="row">
+            <div class="col-6 canvas-container">
+                <canvas id="gl-canvas" width="600" height="600">
+                    Oops ... your browser doesn't support the HTML5 canvas element
+                </canvas>
+
+            </div>
+            <div class="col-2">
+                <label for="bodyRange" class="form-label">Body</label>
+                <input type="range" class="form-range" id="bodyRange" min="-180" max="180">
+
+                <label for="tiltRange" class="form-label">Tilt</label>
+                <input type="range" class="form-range" id="tiltRange" min="-30" max="30">
+
+                <hr class="solid">
+
+                <label for="upper1Range" class="form-label">Upper Tentacle 1</label>
+                <input type="range" class="form-range" id="upper1Range" min="-180" max="180">
+
+                <label for="mid1Range" class="form-label">Mid Tentacle 1</label>
+                <input type="range" class="form-range" id="mid1Range" min="-180" max="180">
+
+                <label for="lower1Range" class="form-label">Lower Tentacle 1</label>
+                <input type="range" class="form-range" id="lower1Range" min="-180" max="180">
+
+                <hr class="solid">
+
+                <label for="upper2Range" class="form-label">Upper Tentacle 2</label>
+                <input type="range" class="form-range" id="upper2Range" min="-180" max="180">
+
+                <label for="mid2Range" class="form-label">Mid Tentacle 2</label>
+                <input type="range" class="form-range" id="mid2Range" min="-180" max="180">
+
+                <label for="lower2Range" class="form-label">Lower Tentacle 2</label>
+                <input type="range" class="form-range" id="lower2Range" min="-180" max="180">
+
+                <hr class="solid">
+
+                <label for="upper3Range" class="form-label">Upper Tentacle 3</label>
+                <input type="range" class="form-range" id="upper3Range" min="-180" max="180">
+
+                <label for="mid3Range" class="form-label">Mid Tentacle 3</label>
+                <input type="range" class="form-range" id="mid3Range" min="-180" max="180">
+
+                <label for="lower3Range" class="form-label">Lower Tentacle 3</label>
+                <input type="range" class="form-range" id="lower3Range" min="-180" max="180">
+
+                <hr class="solid">
+
+                <label for="upper4Range" class="form-label">Upper Tentacle 4</label>
+                <input type="range" class="form-range" id="upper4Range" min="-180" max="180">
+
+                <label for="mid4Range" class="form-label">Mid Tentacle 4</label>
+                <input type="range" class="form-range" id="mid4Range" min="-180" max="180">
+
+                <label for="lower4Range" class="form-label">Lower Tentacle 4</label>
+                <input type="range" class="form-range" id="lower4Range" min="-180" max="180">
+
+            </div>
+            <div class="col-2">
+
+                <label for="upper5Range" class="form-label">Upper Tentacle 5</label>
+                <input type="range" class="form-range" id="upper5Range" min="-180" max="180">
+
+                <label for="mid5Range" class="form-label">Mid Tentacle 5</label>
+                <input type="range" class="form-range" id="mid5Range" min="-180" max="180">
+
+                <label for="lower5Range" class="form-label">Lower Tentacle 5</label>
+                <input type="range" class="form-range" id="lower5Range" min="-180" max="180">
+
+                <hr class="solid">
+
+                <label for="upper6Range" class="form-label">Upper Tentacle 6</label>
+                <input type="range" class="form-range" id="upper6Range" min="-180" max="180">
+
+                <label for="mid6Range" class="form-label">Mid Tentacle 6</label>
+                <input type="range" class="form-range" id="mid6Range" min="-180" max="180">
+
+                <label for="lower6Range" class="form-label">Lower Tentacle 6</label>
+                <input type="range" class="form-range" id="lower6Range" min="-180" max="180">
+
+                <hr class="solid">
+
+                <label for="upper7Range" class="form-label">Upper Tentacle 7</label>
+                <input type="range" class="form-range" id="upper7Range" min="-180" max="180">
+
+                <label for="mid7Range" class="form-label">Mid Tentacle 7</label>
+                <input type="range" class="form-range" id="mid7Range" min="-180" max="180">
+
+                <label for="lower7Range" class="form-label">Lower Tentacle 7</label>
+                <input type="range" class="form-range" id="lower7Range" min="-180" max="180">
+
+                <hr class="solid">
+
+                <label for="upper8Range" class="form-label">Upper Tentacle 8</label>
+                <input type="range" class="form-range" id="upper8Range" min="-180" max="180">
+
+                <label for="mid8Range" class="form-label">Mid Tentacle 8</label>
+                <input type="range" class="form-range" id="mid8Range" min="-180" max="180">
+
+                <label for="lower8Range" class="form-label">Lower Tentacle 8</label>
+                <input type="range" class="form-range" id="lower8Range" min="-180" max="180">
+
+                <hr class="solid">
+
+                <div class="row">
+                    <div class="col-6"><button type="button" class="btn btn-outline-primary btn-sm"
+                            id="rotateButton">Rotate Camera</button></div>
+                    <div class="col-6"><button type="button" class="btn btn-outline-primary btn-sm"
+                            id="saveFrameButton">Save Frame</button></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6"><button type="button" class="btn btn-outline-primary btn-sm"
+                            id="animateButton">Animate</button></div>
+                    <div class="col-6"><button type="button" class="btn btn-outline-primary btn-sm"
+                            id="stopButton">Stop</button></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12"><button type="button" class="btn btn-outline-primary btn-sm"
+                            id="resetButton">Reset Pose</button></div>
+                </div>
+
+            </div>
+
+            <div class="col-2">
+                <div class="list-group" id="keyframesList"></div>
+                <label for="animationSpeedRange" class="form-label">Animation Duration</label>
+                <input type="range" class="form-range" id="animationSpeedRange" min="100" max="3000">
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>
