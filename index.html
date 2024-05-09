@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My WebGL Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Additional CSS for social media buttons */
+        .social-media {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .social-media button {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* LinkedIn button styles */
+        .social-media button[data-name="linkedin"] {
+            background-color: #0077B5;
+            /* LinkedIn Blue */
+        }
+
+        .social-media button[data-name="linkedin"]:hover {
+            background-color: #005682;
+            /* Darker LinkedIn Blue */
+        }
+
+        /* GitHub button styles */
+        .social-media button[data-name="github"] {
+            background-color: #333;
+            /* GitHub Black */
+        }
+
+        .social-media button[data-name="github"]:hover {
+            background-color: #666;
+            /* Lighter GitHub Gray */
+        }
+
+        /* Additional CSS for icon */
+        .social-media button i {
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to My WebGL Gallery!</h1>
+        <div class="projects-container">
+            <div class="projects">
+                <button data-name="Paint with a Twist">Paint with a Twist</button>
+                <button data-name="Octopus Animator">Octopus Animator</button>
+                <button data-name="Breather Parametric Surface">Breather Parametric Surface</button>
+            </div>
+            <div class="readme">
+                <style>
+                    ul {
+                        list-style-type: disc; /* Keeps the bullet style */
+                        padding-left: 0; /* Removes padding to align with the left margin */
+                        margin-left: 0; /* Additional adjustment to align exactly at the left edge */
+                    }
+                    li {
+                        text-align: left; /* Ensures text within list items is aligned to the left */
+                    }
+                </style>
+                <h2 id="project-name">No Three.js, only low level graphics language :D</h2>
+                <div id="project-description"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Media Buttons -->
+    <div class="social-media">
+        <button data-name="github" onclick="location.href='https://github.com/tarikdemiroren'" title="GitHub"><i
+                class="fab fa-github"></i></button>
+        <button data-name="linkedin" onclick="location.href='https://www.linkedin.com/in/tarik-demiroren/'" title="LinkedIn"><i
+                class="fab fa-linkedin"></i></button>
+    </div>
+
+    <script>
+        const projectsInfo = {
+            "Paint with a Twist": {
+                description: "A WebGL painting application with various features."+
+                "<ul>"+
+                    "<li>Uses triangles instead of pixels</li>"+
+                    "<li>You can choose from 9 different preset colors. (Or set your own color using RGB values)</li>"+
+                    "<li>All the standart features you can expect from a paint application like cut, move, copy, paste, zoom in and out</li>"+
+                    "<li>Supports layers, you can draw on 3 different layers and choose visibility of each layer</li>"+
+                    "<li>You can save and load project files that records project specific data such as drawing layers</li>"+
+                    "<li>You can download your drawing as PNG</li>"+
+                "</ul>",
+                url: "WebGLPaint/index.html"
+            },
+            "Octopus Animator": {
+                description: "An animation tool to animate an octopus character."+
+                "<ul>"+
+                "<li>You can set your favourite octopus pose</li>"+
+                "<li>Save a series of them as key frames</li>"+
+                "<li>And see the octopus move as your liking</li>"+
+                "<li>You can save the animation in a file and upload it to the application anytime</li>"+
+                "</ul>",
+                url: "Timothy/main.html"
+            },
+            "Breather Parametric Surface": {
+                description: "A parametric surface visualization tool with breathing effects."+
+                "<ul>"+
+                "<li>Whoa! There is a strange shape you can control</li>"+
+                "<li>Play with parameters to create a breather surface</li>"+
+                "<li>Change the shader type between phong shading and gouraud shading</li>"+
+                "<li>View your shape as a wireframe</li>"+
+                "<li>Move the shape with your mouse</li>"+
+                "</ul>",
+                url: "WebGL-Breather-Surface/main.html"
+            }
+        };
+    
+        const buttons = document.querySelectorAll('.projects button');
+        const projectName = document.getElementById('project-name');
+        const projectDescription = document.getElementById('project-description');
+    
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const project = projectsInfo[name];
+                
+                let additionalName = "";
+                if (name === "Paint with a Twist"){
+                    additionalName = ": Gubi Paint";
+                }
+                else if (name === "Octopus Animator"){
+                    additionalName = ": Meet Octopus Timothy";
+                }
+                else if (name === "Breather Parametric Surface"){
+                    additionalName = ": Magic With Math"
+                }
+
+                projectName.textContent = name + additionalName;
+                projectDescription.innerHTML = `<p>${project.description}</p><button class="project-button" onclick="location.href='${project.url}'">Go To Project</button>`;
+            });
+            
+        });
+    </script>
+    
+</body>
+
+</html>
